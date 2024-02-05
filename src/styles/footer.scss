@@ -1,0 +1,31 @@
+@use "_variables" as vars;
+
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 65px 60px;
+  color: vars.$very-light-color;
+  img {
+    margin-bottom: 15px;
+  }
+  .footer-parag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: vars.$tablet) {
+  footer {
+    padding: 65px 0 30px;
+    img {
+      margin-bottom: 45px;
+    }
+    .footer-parag {
+      flex-direction: row;
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}

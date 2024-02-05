@@ -1,0 +1,105 @@
+@use "_variables.scss" as vars;
+@use "_mixins.scss" as mixin;
+@use "_functions.scss" as func;
+
+.appartment-details {
+  color: vars.$primary-color;
+  padding: 0 20px 25px;
+  .appartment-infos-principal {
+    .appartment-detail-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    .appartment-detail-location {
+      font-size: func.convertToRem(14px);
+    }
+    .appartment-detail-tags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      list-style-type: none;
+      .appartment-detail-tag {
+        background-color: vars.$primary-color;
+        color: vars.$very-light-color;
+        font-size: func.convertToRem(10px);
+        padding: 5px 10px;
+        border-radius: 10px;
+        margin: 10px 10px 0 0;
+      }
+    }
+  }
+  .appartment-infos-secondary {
+    @include mixin.flexRowCenter;
+    margin: 25px 0 0;
+    .appartment-rating {
+      .star {
+        width: 18px;
+        height: 18px;
+      }
+      .star-grey {
+        color: #e3e3e3;
+      }
+    }
+    .appartment-host {
+      @include mixin.flexRowCenter;
+      .host-name {
+        width: 50%;
+        padding-left: 20%;
+      }
+      .host-picture {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: vars.$tablet) {
+  .appartment-details {
+    @include mixin.flexRowCenter;
+    padding: 0 60px;
+    .appartment-infos-principal {
+      width: 70%;
+      .appartment-detail-title {
+        font-size: 3rem;
+      }
+      .appartment-detail-location {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      .appartment-detail-tags {
+        .appartment-detail-tag {
+          font-size: func.convertToRem(14px);
+          padding: 10px 25px;
+        }
+      }
+    }
+    .appartment-infos-secondary {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      .appartment-rating {
+        .star {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      .appartment-host {
+        margin-bottom: 21px;
+        .host-name {
+          font-size: 1.5rem;
+          width: 100%;
+          padding-left: 0;
+        }
+        .host-picture {
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+  }
+}

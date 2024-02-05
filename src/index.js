@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+// Importation de la fonction createRoot depuis le module "react-dom/client"
+import { createRoot } from "react-dom/client";
+import "./styles/index.scss";
+// Importation du composant principal de l'application depuis le fichier App.js
+import App from "./App";
+// Importation du composant BrowserRouter depuis le module "react-router-dom"
+import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Création d'une racine de rendu React à l'élément HTML avec l'ID "root"
+const root = createRoot(document.getElementById("root"));
+// Rendu de l'application React à l'intérieur du composant BrowserRouter
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>
+  </BrowserRouter>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

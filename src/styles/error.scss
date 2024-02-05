@@ -1,0 +1,39 @@
+@use "_variables.scss" as vars;
+@use "_functions.scss" as func;
+
+.error {
+  color: vars.$primary-color;
+  text-align: center;
+  .error-title {
+    margin-top: 113px;
+    font-size: 8rem;
+    font-weight: 700;
+  }
+  .error-parag {
+    font-size: 1.5rem;
+    margin: 113px 20px;
+  }
+  .error-link {
+    display: inline-block;
+    margin-bottom: 113px;
+    color: vars.$primary-color;
+    font-size: func.convertToRem(14px);
+  }
+}
+
+@media screen and (min-width: vars.$tablet) {
+  .error {
+    .error-title {
+      margin-top: 95px;
+      font-size: 24rem;
+    }
+    .error-parag {
+      font-size: 3rem;
+      margin: 140px 60px;
+    }
+    .error-link {
+      font-size: 1.5rem;
+      margin-bottom: 140px;
+    }
+  }
+}

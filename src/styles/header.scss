@@ -1,0 +1,55 @@
+@use "_variables.scss" as vars;
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    width: 145px;
+    height: 46px;
+  }
+  .header-navigation {
+    display: flex;
+    align-items: center;
+    a {
+      color: vars.$primary-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      &.active {
+        text-decoration: underline;
+      }
+      &:nth-child(1) {
+        margin: 0 20px 0 5px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: vars.$mobile) {
+  header {
+    .header-navigation {
+      a {
+        font-size: 1.5rem;
+        text-transform: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: vars.$tablet) {
+  header {
+    padding: 45px 60px;
+    .logo {
+      width: 210px;
+      height: 68px;
+    }
+    .header-navigation {
+      a {
+        font-size: 2rem;
+        &:nth-child(1) {
+          margin-right: 60px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+@use "_variables.scss" as vars;
+
+@function convertToRem($value) {
+  @return calc($value / vars.$fontSizeDefault * 1rem);
+}

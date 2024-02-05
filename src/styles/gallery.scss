@@ -1,0 +1,68 @@
+@use "_variables" as vars;
+@use "_mixins.scss" as mixin;
+
+.gallery-content {
+  position: relative;
+  margin: 10px 20px 15px;
+  .images-container {
+    &.slide-anim {
+      animation: slideAnim 0.3s ease-out;
+    }
+    .appart-detail-img {
+      @include mixin.sizeImage;
+      object-fit: cover;
+    }
+    .image-counter {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: vars.$very-light-color;
+      font-size: 1.5rem;
+      display: none;
+    }
+  }
+  .gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .gallery-btn-left {
+    left: 6px;
+  }
+  .gallery-btn-right {
+    right: 6px;
+  }
+}
+@keyframes slideAnim {
+  to {
+    opacity: 0.8;
+  }
+}
+@media screen and (min-width: vars.$tablet) {
+  .gallery-content {
+    margin: 0 60px 30px;
+    .arrow {
+      width: 45px;
+      height: 80px;
+    }
+    .arrow-left {
+      left: 25px;
+    }
+    .arrow-right {
+      right: 25px;
+    }
+    .images-container {
+      .appart-detail-img {
+        height: 415px;
+        border-radius: 25px;
+      }
+      .image-counter {
+        display: block;
+      }
+    }
+  }
+}

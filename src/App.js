@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// Importation des composants
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import Router from "./components/Router"
 
+// Définition du composant principal de l'application
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+      <Router />
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+// Exportation du composant App pour qu'il puisse être utilisé ailleurs dans l'application
+export default App

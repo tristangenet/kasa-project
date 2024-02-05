@@ -1,0 +1,77 @@
+@use "_variables.scss" as vars;
+
+.banner {
+  position: relative;
+  margin: 0 20px 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 115px;
+    border-radius: 10px;
+    background-color: vars.$overlay-color;
+    z-index: -1;
+  }
+
+  .banner-img {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 115px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .banner-title {
+    color: vars.$very-light-color;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-weight: 400;
+
+    &.about {
+      position: absolute;
+      top: -9999px;
+    }
+  }
+
+  @media screen and (min-width: vars.$mobile) {
+    .banner {
+      .banner-title {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.5rem;
+        .title-break {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: vars.$tablet) {
+    margin: 0 60px;
+    &::after {
+      width: 100%;
+      height: 225px;
+      left: 0;
+      border-radius: 25px;
+    }
+    .banner-img {
+      height: 225px;
+      border-radius: 25px;
+    }
+    .banner-title {
+      font-size: 4rem;
+      position: absolute; // Ajouter cette ligne
+      text-align: center;
+      width: 100%;
+      .title-break {
+        display: none; // Ne pas afficher title-break sur tablette et desktop
+      }
+    }
+  }
+}
