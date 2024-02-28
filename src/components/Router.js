@@ -11,8 +11,7 @@ export default function Router() {
       <Route path="/Kasa" element={<Home />} />
       <Route path="/a-propos" element={<About />} />
       <Route path="/appartment/:id" element={<AppartmentPage />} />
-      <Route path="/erreur" element={<Error />} />
-      <Route path="/*" element={<Navigate to="/erreur" />} />
+      <Route path="/*" element={<Error/>} />
     </Routes>
   )
 }
