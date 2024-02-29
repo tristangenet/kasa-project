@@ -29,7 +29,7 @@ export default function AppartmentPage() {
       <Collapse title="Description" txt={description} />
 
       {/* Collapse pour les équipements */}
-      <Collapse title="Équipements" txt={equipments} />
+      <Collapse title="Équipements" txt={equipments.map(item => <li>{item}</li>)} />
       </div>
     </main>
   );

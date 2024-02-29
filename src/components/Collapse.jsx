@@ -1,4 +1,5 @@
-import "../styles/collapse.scss"
+import arrowBack from '../assets/arrow_back.png'
+import "../styles/collapse.scss";
 import { useState } from "react";
 
 const Collapse = ({ title, txt }) => {
@@ -9,17 +10,16 @@ const Collapse = ({ title, txt }) => {
     setDisplay(!display);
     setIsActive(!isActive);
   }
+
   return (
     <div className="collapse-container">
       <div className="collapse" onClick={handleClick}>
         <h2 className="collapse__title">{title}</h2>
-        <i
-          className={
-            isActive
-              ? "collapse__chevron collapse__chevron--active fa-solid fa-chevron-up"
-              : "collapse__chevron fa-solid fa-chevron-up"
-          }
-        ></i>
+        <img
+          className={`collapse__arrow ${isActive || 'down'}`}
+          src={arrowBack}
+          alt="Arrow"
+        />
       </div>
       <div
         className={

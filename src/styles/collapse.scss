@@ -1,4 +1,4 @@
-@use "_variables.scss" as vars;
+@use "_variables.scss" as *;
 @use "_mixins.scss" as mixin;
 @use "_functions.scss" as func;
 
@@ -71,6 +71,14 @@
   margin-bottom: 40px;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.down {
+  transform: rotate(180deg);
+}
+
+li {
+  list-style: none;
 }
 
 @media screen and (min-width: 1024px) {
